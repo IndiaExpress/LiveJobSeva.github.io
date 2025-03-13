@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiaGo - Online Services</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* Fixed Header */
+        header {
+            background: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 4px;
+            transition: 0.3s;
+            background: #ddd;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            background: #007BFF;
+            color: white;
+        }
+
+        section {
+            display: none;
+            padding-top: 90px;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        #home { background: #e3f2fd; display: block; }
+        #contact { background: #fff3cd; }
+        #notice { background: #d4edda; }
+        #login { background: #f8d7da; }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+            width: 300px;
+            margin: auto;
+            border-radius: 8px;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .switch-form {
+            margin-top: 10px;
+            color: #007BFF;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .switch-form:hover {
+            text-decoration: underline;
+        }
+
+        .logout-btn {
+            display: none;
+            padding: 8px 14px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .user-info {
+            display: none;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-top: 5px;
+            }
+
+            nav a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+        }
+
+
+        .container {
+            display: flex;
+            width: 100%;
+            background: white;
+            padding:10px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Each Category Box */
+        .category {
+            flex: 1;
+            padding:2px;
+            text-align: center;
+            border-right: 2px solid #ddd;
+        }
+
+        /* Remove border from last category */
+        .category:last-child {
+            border-right: none;
+        }
+
+        /* Category Heading */
+        .category h3 {
+            color: #FF5146;
+            margin-bottom: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Service List */
+        .services {
+            list-style: none;
+            padding: 0;
+        }
+
+        .services li {
+            background: #f1f1f1;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 10px;
+            font-weight: bold;
+            color: #333;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover Effect */
+        .services li:hover {
+            color: white;
+            cursor: pointer;
+        }
+
+.p12{
+margin-bottom: 7px;
+}
+
+        marquee {
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+            background: #2AFF17;
+
+            border-radius: 5px;
+
+        }
+
+
+.search-box {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-box input {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-box button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+
+.video-guide {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.video-guide ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.video-guide li {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.video-guide a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.video-guide a:hover {
+    text-decoration: underline;
+}
+
+.notices {
+    list-style-type: none;
+    padding: 0;
+}
+
+.notices li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.notices a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .category {
+        margin-bottom: 20px;
+    }
+    .services {
+        list-style: none;
+        padding: 0;
+        max-height: 300px; /* Initially show limited items */
+        overflow: hidden;
+    }
+    .view-more {
+        color: blue;
+        cursor: pointer;
+        display: block;
+        margin-top: 10px;
+    }
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+    .services {
+        max-height: 300px; /* 5 आइटम के बाद स्क्रॉल दिखेगा */
+        overflow-y: auto;  /* स्क्रॉल बार ऑन */
+        padding-left: 0px;
+    }
+    .services::-webkit-scrollbar {
+        width: 1px;
+    }
+    .services::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 5px;
+    }
+    .services::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+
+    </style>
+</head>
+<body>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    let targetSection = sessionStorage.getItem("targetSection");
+
+    if (targetSection) {
+        setTimeout(() => { 
+            showSection(targetSection);  
+            sessionStorage.removeItem("targetSection");  
+        }, 001); // 0.5 सेकंड का छोटा डिले ताकि पेज पहले लोड हो जाए
+    } else {
+        showSection("home"); 
+    }
+});
+</script>
+
+    <header>
+        <div class="logo">🏡 Welcome to IndiaGo 🚀</div>
+        <nav>
+            <a onclick="showSection('home')">Home</a>
+            <a onclick="showSection('contact')">Videos</a>
+            <a onclick="showSection('notice')">Notice</a>
+            <a onclick="showSection('login')" id="loginNav">Login</a>
+        </nav>
+    </header>
+
+<section id="home">
+
+    <p class="p12">All Government and Private services available</p>
+
+<marquee class="marquee2" behavior="alternate" direction="left" scrollamount="6" 
+style="color: blue; font-size: 16px; font-weight: bold; background: white; padding: 5px; border-top: 2px solid #FF9933; border-bottom: 2px solid #138808;">
+    🚀 Notification पाने के लिए लॉगिन करें! 📢
+</marquee>
+
+<marquee class="marquee3" behavior="scroll" direction="left" scrollamount="5" 
+style="color: white; font-size: 16px; font-weight: bold; background: #138808; padding: 8px; border-radius: 5px;">
+    📢 Important Notice: Website will be under maintenance from 10 PM to 12 AM.
+</marquee>
+
+<hr >
+
+
+
+<hr >
+
+    <div class="container">
+        
+    <!-- Government Services -->
+    <div class="category">
+<h3>Government Services</h3>
+<ul class="services" id="govt-services">
+    <!-- पहचान पत्र और सरकारी दस्तावेज -->
+    <li><a href="https://www.onlineservices.nsdl.com" target="_blank">Online PAN Card</a></li>
+    <li><a href="https://uidai.gov.in/" target="_blank">Aadhaar Update</a></li>
+    <li><a href="https://www.nvsp.in/" target="_blank">Voter ID Apply</a></li>
+    <li><a href="https://www.passportindia.gov.in/" target="_blank">Passport Services</a></li>
+    <li><a href="https://eshram.gov.in/" target="_blank">e-Shram Card</a></li>
+
+    <!-- बैंकिंग और वित्तीय सेवाएँ -->
+    <li><a href="https://pmkisan.gov.in/" target="_blank">PM Kisan Samman Nidhi</a></li>
+    <li><a href="https://www.bharatbillpay.com/" target="_blank">Bharat Bill Payment</a></li>
+    <li><a href="https://www.psbloansin59minutes.com/" target="_blank">PSB Loans (बिजनेस लोन)</a></li>
+    <li><a href="https://epfindia.gov.in/" target="_blank">EPF Balance Check</a></li>
+    <li><a href="https://nrega.nic.in/netnrega/" target="_blank">MGNREGA</a></li>
+
+    <!-- आयकर और GST -->
+    <li><a href="https://incometaxindiaefiling.gov.in/" target="_blank">ITR Filing</a></li>
+    <li><a href="https://gst.gov.in/" target="_blank">GST Services</a></li>
+
+    <!-- भूमि रिकॉर्ड और संपत्ति -->
+    <li><a href="https://bhulekh.nic.in/" target="_blank">Land Record</a></li>
+    <li><a href="https://biharbhumi.bihar.gov.in/" target="_blank">Bihar Land Records</a></li>
+    <li><a href="https://wbregistration.gov.in/" target="_blank">West Bengal Land Registration</a></li>
+    <li><a href="https://grammanchitra.gov.in/" target="_blank">Gram Manchitra</a></li>
+
+    <!-- वाहन और परिवहन सेवाएँ -->
+    <li><a href="https://parivahan.gov.in/" target="_blank">Vehicle Registration</a></li>
+    <li><a href="https://sarathi.parivahan.gov.in/" target="_blank">Driving License</a></li>
+    <li><a href="https://www.uber.com/in/en/" target="_blank">Uber Booking</a></li>
+    <li><a href="https://www.olacabs.com/" target="_blank">Ola Booking</a></li>
+
+    <!-- रेलवे और ट्रांसपोर्ट -->
+    <li><a href="https://www.irctc.co.in/" target="_blank">IRCTC Train Booking</a></li>
+    <li><a href="https://www.indianrail.gov.in/" target="_blank">Indian Railways</a></li>
+
+    <!-- सुरक्षा और रक्षा सेवाएँ -->
+    <li><a href="https://bsf.gov.in/" target="_blank">BSF Recruitment</a></li>
+    <li><a href="https://cisfrectt.in/" target="_blank">CISF Recruitment</a></li>
+    <li><a href="https://joinindianarmy.nic.in/" target="_blank">Indian Army Recruitment</a></li>
+    <li><a href="https://joinindiannavy.gov.in/" target="_blank">Indian Navy Recruitment</a></li>
+    <li><a href="https://airmenselection.cdac.in/" target="_blank">Indian Airforce Recruitment</a></li>
+
+    <!-- छात्रवृत्ति और शिक्षा -->
+    <li><a href="https://scholarships.gov.in/" target="_blank">National Scholarship Portal</a></li>
+    <li><a href="https://mahadbt.maharashtra.gov.in/" target="_blank">MahaDBT Scholarship</a></li>
+    <li><a href="https://www.ncs.gov.in/" target="_blank">National Career Service (NCS)</a></li>
+    <li><a href="https://nptel.ac.in/" target="_blank">NPTEL Free Courses</a></li>
+    <li><a href="https://swayam.gov.in/" target="_blank">Swayam Online Learning</a></li>
+    <li><a href="https://ugcnet.nta.nic.in/" target="_blank">UGC NET</a></li>
+    <li><a href="https://csirnet.nta.nic.in/" target="_blank">CSIR NET</a></li>
+
+    <!-- स्वास्थ्य और चिकित्सा -->
+    <li><a href="https://www.cowin.gov.in/" target="_blank">Cowin Vaccination</a></li>
+    <li><a href="https://nha.gov.in/" target="_blank">Ayushman Bharat Yojana</a></li>
+    <li><a href="https://www.india.gov.in/health-services" target="_blank">India Health Services</a></li>
+    
+    <!-- बिजली और पानी बिल -->
+    <li><a href="https://mahadiscom.in/" target="_blank">Maharashtra Electricity Bill</a></li>
+    <li><a href="https://wbpds.wb.gov.in/" target="_blank">West Bengal Ration Card</a></li>
+    <li><a href="https://e-mitra.rajasthan.gov.in/" target="_blank">E-Mitra Rajasthan</a></li>
+    <li><a href="https://tneb.tnebnet.org/awp/login" target="_blank">TNEB Tamil Nadu Electricity</a></li>
+
+    <!-- अन्य सरकारी सेवाएँ -->
+    <li><a href="https://www.startupindia.gov.in/" target="_blank">Startup India</a></li>
+    <li><a href="https://www.msde.gov.in/" target="_blank">Skill Development (MSDE)</a></li>
+    <li><a href="https://www.india.gov.in/" target="_blank">India Government Portal</a></li>
+    <li><a href="https://indiaculture.nic.in/" target="_blank">Ministry of Culture</a></li>
+</ul>
+        <span class="view-more" onclick="toggleView('govt-services', this)">View More</span>
+    </div>
+
+<!-- Latest Jobs-->
+<div class="category">
+<h3>Latest Jobs</h3>
+<ul class="services" id="latest-jobs">
+    <li><a href="jobs/ssc_mts.html" target="_blank">SSC MTS <br><span id="status-ssc-mts"></span></a></li>
+    <li><a href="jobs/ibps_po.html" target="_blank">IBPS PO <br><span id="status-ibps"></span></a></li>
+    <li><a href="jobs/rrb_gov.html" target="_blank">RRB NTPC <br><span id="status-rrb"></span></a></li>
+    <li><a href="jobs/indian_navy_ssr.html" target="_blank">Indian Navy SSR <br><span id="status-navy"></span></a></li>
+    <li><a href="jobs/airforce_xy.html" target="_blank">Indian Air Force X & Y Group <br><span id="status-airforce"></span></a></li>
+    <li><a href="jobs/bihar_police_si.html" target="_blank">Bihar Police SI <br><span id="status-bihar-si"></span></a></li>
+    <li><a href="jobs/bihar_police_constable.html" target="_blank">Bihar Police Constable <br><span id="status-bihar-constable"></span></a></li>
+    <li><a href="https://bank.sbi/careers" target="_blank">SBI Clerk <br><span id="status-sbi-clerk"></span></a></li>
+    <li><a href="https://bank.sbi/careers" target="_blank">SBI PO <br><span id="status-sbi-po"></span></a></li>
+    <li><a href="https://drdo.gov.in/" target="_blank">DRDO Scientist B <br><span id="status-drdo"></span></a></li>
+    <li><a href="https://isro.gov.in/Careers.html" target="_blank">ISRO Scientist/Engineer <br><span id="status-isro"></span></a></li>
+    <li><a href="https://www.indiapost.gov.in/" target="_blank">India Post GDS <br><span id="status-post-gds"></span></a></li>
+    <li><a href="https://www.nabard.org/" target="_blank">NABARD Assistant Manager <br><span id="status-nabard"></span></a></li>
+    <li><a href="https://www.fci.gov.in/" target="_blank">FCI Manager <br><span id="status-fci"></span></a></li>
+    <li><a href="https://uppsc.up.nic.in/" target="_blank">UPPSC PCS <br><span id="status-uppsc"></span></a></li>
+    <li><a href="https://bpsc.bih.nic.in/" target="_blank">BPSC PCS <br><span id="status-bpsc"></span></a></li>
+    <li><a href="https://ugcnet.nta.nic.in/" target="_blank">UGC NET <br><span id="status-ugc-net"></span></a></li>
+    <li><a href="https://csirnet.nta.nic.in/" target="_blank">CSIR NET <br><span id="status-csir-net"></span></a></li>
+    <li><a href="https://esic.gov.in/" target="_blank">ESIC UDC & Stenographer <br><span id="status-esic"></span></a></li>
+</ul>
+
+<script>
+    function updateJobStatus() {
+        const jobs = [
+            { id: "status-ssc-mts", applydate: "2025-06-20", lastdate: "2025-06-26" },
+            { id: "status-upsc", applydate: "2025-03-20", lastdate: "2025-03-28" },
+            { id: "status-ibps", applydate: "2025-01-10", lastdate: "2025-02-15" },
+            { id: "status-rrb", applydate: "2025-07-25", lastdate: "2025-07-30" },
+            { id: "status-navy", applydate: "", lastdate: "2025-08-10" }, // Coming Soon
+            { id: "status-airforce", applydate: "2025-04-10", lastdate: "2025-04-20" },
+            { id: "status-bihar-si", applydate: "2025-05-01", lastdate: "2025-05-10" },
+            { id: "status-bihar-constable", applydate: "2025-06-15", lastdate: "2025-06-25" },
+            { id: "status-sbi-clerk", applydate: "2025-07-05", lastdate: "2025-07-15" },
+            { id: "status-sbi-po", applydate: "", lastdate: "2025-09-01" }, // Coming Soon
+            { id: "status-drdo", applydate: "2025-03-05", lastdate: "2025-03-15" },
+            { id: "status-isro", applydate: "2025-05-10", lastdate: "2025-05-20" },
+            { id: "status-post-gds", applydate: "", lastdate: "2025-08-30" }, // Coming Soon
+            { id: "status-nabard", applydate: "2025-06-01", lastdate: "2025-06-10" },
+            { id: "status-fci", applydate: "2025-09-15", lastdate: "2025-09-25" },
+            { id: "status-uppsc", applydate: "2025-07-10", lastdate: "2025-07-20" },
+            { id: "status-bpsc", applydate: "2025-08-05", lastdate: "2025-08-15" },
+            { id: "status-ugc-net", applydate: "", lastdate: "2025-11-01" }, // Coming Soon
+            { id: "status-csir-net", applydate: "2025-10-01", lastdate: "2025-10-10" },
+            { id: "status-esic", applydate: "2025-04-20", lastdate: "2025-04-30" }
+        ];
+
+        const today = new Date().toISOString().split("T")[0];
+
+        jobs.forEach(job => {
+            let element = document.getElementById(job.id);
+            if (element) {
+                if (!job.applydate || today < job.applydate) {
+                    element.innerText = "Coming Soon";
+                    element.style.color = "orange";
+                } else if (today >= job.applydate && today <= job.lastdate) {
+                    element.innerText = "Apply";
+                    element.style.color = "green";
+                } else {
+                    element.innerText = "Expired";
+                    element.style.color = "red";
+                }
+            }
+        });
+    }
+
+    updateJobStatus();
+</script>
+
+    <span class="view-more" onclick="toggleView('latest-jobs', this)">View More</span>
+</div>
+
+<!-- Results -->
+<div class="category">
+    <h3>Results</h3>
+        <ul class="services" id="exam-results">
+        <!-- 10th Results -->
+        <li><a href="https://bsebresult.biharboardonline.com/" target="_blank">Bihar Board 10th Result - <span class="status" id="result-bihar-10"></span></a></li>
+        <li><a href="https://cbseresults.nic.in/" target="_blank">CBSE 10th Result - <span class="status" id="result-cbse-10"></span></a></li>
+        <li><a href="https://upresults.nic.in/" target="_blank">UP Board 10th Result - <span class="status" id="result-upboard-10"></span></a></li>
+
+        <!-- 12th Results -->
+        <li><a href="https://bsebresult.biharboardonline.com/" target="_blank">Bihar Board 12th Result - <span class="status" id="result-bihar-12"></span></a></li>
+        <li><a href="https://cbseresults.nic.in/" target="_blank">CBSE 12th Result - <span class="status" id="result-cbse-12"></span></a></li>
+        <li><a href="https://upresults.nic.in/" target="_blank">UP Board 12th Result - <span class="status" id="result-upboard-12"></span></a></li>
+
+        <!-- Competitive Exam Results -->
+        <li><a href="https://nta.ac.in/" target="_blank">NTA NEET Result - <span class="status" id="result-neet"></span></a></li>
+        <li><a href="https://nta.ac.in/" target="_blank">NTA JEE Result - <span class="status" id="result-jee"></span></a></li>
+        <li><a href="https://ssc.nic.in/" target="_blank">SSC Exam Result - <span class="status" id="result-ssc"></span></a></li>
+        <li><a href="https://www.upsc.gov.in/examinations" target="_blank">UPSC Result - <span class="status" id="result-upsc"></span></a></li>
+        <li><a href="https://www.nta.ac.in/" target="_blank">CUET UG Result - <span class="status" id="result-cuet"></span></a></li>
+        <li><a href="https://www.nta.ac.in/" target="_blank">CUET PG Result - <span class="status" id="result-cuet-pg"></span></a></li>
+        <li><a href="https://railwayrecruitment.in/" target="_blank">Railway Exam Result - <span class="status" id="result-rrb"></span></a></li>
+        <li><a href="https://www.ibps.in/" target="_blank">IBPS Bank Exam Result - <span class="status" id="result-ibps"></span></a></li>
+        <li><a href="https://ctet.nic.in/" target="_blank">CTET Result - <span class="status" id="result-ctet"></span></a></li>
+        <li><a href="https://biharboardonline.bihar.gov.in/" target="_blank">Bihar STET Result - <span class="status" id="result-stet"></span></a></li>
+        <li><a href="https://bpsc.bih.nic.in/" target="_blank">BPSC Exam Result - <span class="status" id="result-bpsc"></span></a></li>
+        <li><a href="https://tet.examraj.in/" target="_blank">UPTET Result - <span class="status" id="result-uptet"></span></a></li>
+        </ul>
+<script>
+
+
+
+// 🔹 VIEW MORE FUNCTIONALITY
+function toggleView(id, button) {
+    const list = document.getElementById(id);
+    if (list.style.maxHeight) {
+        list.style.maxHeight = null;
+        button.innerText = "View More";
+    } else {
+        list.style.maxHeight = "none";
+        button.innerText = "View Less";
+    }
+}
+
+</script>
+    <span class="view-more" onclick="toggleView('exam-results', this)">View More</span>
+</div>
+
+</div>
+
+
+<hr >
+
+
+<div class="container">
+
+<!-- Admit Card -->
+<div class="category">
+    <h3>Admit Card</h3>
+    <ul class="services" id="admit-card">
+        <li><a href="https://ssc.nic.in/" target="_blank">SSC CHSL Admit Card <br><span id="status-ssc-chsl"></span></a></li>
+        <li><a href="https://upsc.gov.in/" target="_blank">UPSC CSE Prelims Admit Card <br><span id="status-upsc-cse"></span></a></li>
+        <li><a href="https://jeemain.nta.nic.in/" target="_blank">JEE Main Session 2 Admit Card <br><span id="status-jee-main"></span></a></li>
+        <li><a href="https://nta.ac.in/" target="_blank">NEET UG 2025 Admit Card <br><span id="status-neet"></span></a></li>
+        <li><a href="https://gate.iitk.ac.in/" target="_blank">GATE 2025 Admit Card <br><span id="status-gate"></span></a></li>
+        <li><a href="https://ibps.in/" target="_blank">IBPS PO Mains Admit Card <br><span id="status-ibps-po"></span></a></li>
+        <li><a href="https://www.joinindianarmy.nic.in/" target="_blank">Indian Army Agniveer Admit Card <br><span id="status-army"></span></a></li>
+        <li><a href="https://www.rrbcdg.gov.in/" target="_blank">RRB Group D Admit Card <br><span id="status-rrb-groupd"></span></a></li>
+        <li><a href="https://biharpolice.bih.nic.in/" target="_blank">Bihar Police Constable Admit Card <br><span id="status-bihar-police"></span></a></li>
+    </ul>
+
+    <script>
+        function updateAdmitCardStatus() {
+            const admitCards = [
+                { id: "status-ssc-chsl", releaseDate: "2025-03-01" },
+                { id: "status-upsc-cse", releaseDate: "2025-03-10" },
+                { id: "status-jee-main", releaseDate: "" }, // Coming Soon
+                { id: "status-neet", releaseDate: "" }, // Coming Soon
+                { id: "status-gate", releaseDate: "2025-02-15" },
+                { id: "status-ibps-po", releaseDate: "" }, // Coming Soon
+                { id: "status-army", releaseDate: "2025-03-05" },
+                { id: "status-rrb-groupd", releaseDate: "" }, // Coming Soon
+                { id: "status-bihar-police", releaseDate: "2025-02-20" }
+            ];
+
+            const today = new Date().toISOString().split("T")[0];
+
+            admitCards.forEach(admitCard => {
+                let element = document.getElementById(admitCard.id);
+                if (element) {
+                    if (!admitCard.releaseDate || today < admitCard.releaseDate) {
+                        element.innerText = "Coming Soon";
+                        element.style.color = "red";
+                    } else {
+                        element.innerText = "Active";
+                        element.style.color = "green";
+                    }
+                }
+            });
+        }
+
+        updateAdmitCardStatus();
+    </script>
+
+    <button class="view-more-btn" onclick="toggleView('admit-card', this)">View More</button>
+</div>
+
+    <!-- Transport & Travel -->
+    <div class="category">
+        <h3>Transport & Travel</h3>
+        <ul class="services" id="transport-travel">
+            <li><a href="https://sarathi.parivahan.gov.in/" target="_blank">Driving License Apply</a></li>
+            <li><a href="https://vahan.parivahan.gov.in/" target="_blank">Vehicle Registration</a></li>
+            <li><a href="https://echallan.parivahan.gov.in/" target="_blank">Pay E-Challan</a></li>
+            <li><a href="https://www.irctc.co.in/" target="_blank">IRCTC Train Booking</a></li>
+            <li><a href="https://www.redbus.in/" target="_blank">Bus Ticket Booking</a></li>
+            <li><a href="https://www.passportindia.gov.in/" target="_blank">Passport Apply</a></li>
+            <li><a href="https://state.bihar.gov.in/" target="_blank">Bihar Transport Services</a></li>
+        </ul>
+        <button class="view-more-btn" onclick="toggleView('transport-travel', this)">View More</button>
+    </div>
+
+    <!-- Education & Scholarship -->
+    <div class="category">
+        <h3>Education & Scholarship</h3>
+        <ul class="services" id="education-scholarship">
+            <li><a href="https://scholarships.gov.in/" target="_blank">National Scholarship Portal</a></li>
+            <li><a href="https://nsp.gov.in/" target="_blank">Post Matric Scholarship</a></li>
+            <li><a href="https://ugc.ac.in/" target="_blank">UGC Scholarship Schemes</a></li>
+            <li><a href="https://educationloan.in/" target="_blank">Education Loan Assistance</a></li>
+            <li><a href="https://biharboardonline.bihar.gov.in/" target="_blank">Bihar Board Scholarship</a></li>
+            <li><a href="https://csirhrdg.res.in/" target="_blank">CSIR Research Fellowship</a></li>
+            <li><a href="https://www.aicte-india.org/" target="_blank">AICTE Scholarship Schemes</a></li>
+        </ul>
+        <button class="view-more-btn" onclick="toggleView('education-scholarship', this)">View More</button>
+    </div>
+
+</div>
+
+<hr >
+
+<div class="container">
+
+    <!-- Banking & Finance -->
+    <div class="category">
+        <h3>Banking & Finance</h3>
+        <ul class="services">
+            <li><a href="https://www.onlineservices.nsdl.com" target="_blank">Online PAN Card</a></li>
+            <li><a href="https://uidai.gov.in/" target="_blank">Aadhaar Update</a></li>
+            <li><a href="https://www.nvsp.in/" target="_blank">Voter ID Apply</a></li>
+            <li><a href="https://incometaxindiaefiling.gov.in/" target="_blank">ITR Filing</a></li>
+            <li><a href="https://www.bankbazaar.com/" target="_blank">Bank Account Opening</a></li>
+            <li><a href="https://pmjdy.gov.in/" target="_blank">Jan Dhan Account</a></li>
+            <li><a href="https://www.epfindia.gov.in/" target="_blank">EPF Balance Check</a></li>
+            <li><a href="https://www.npci.org.in/" target="_blank">UPI Registration</a></li>
+            <li><a href="https://www.mudra.org.in/" target="_blank">Mudra Loan</a></li>
+        </ul>
+    </div>
+
+    <!-- Comparative Exams -->
+    <div class="category">
+        <h3>Comparative Exams</h3>
+        <ul class="services">
+            <li><a href="https://ssc.nic.in/" target="_blank">SSC Exams (CGL, CHSL, MTS)</a></li>
+            <li><a href="https://upsc.gov.in/" target="_blank">UPSC Civil Services</a></li>
+            <li><a href="https://www.ibps.in/" target="_blank">IBPS Bank Exams (PO, Clerk, SO)</a></li>
+            <li><a href="https://railwayrecruitment.gov.in/" target="_blank">Railway Recruitment (RRB NTPC, Group D)</a></li>
+            <li><a href="https://joinindianarmy.nic.in/" target="_blank">Defence Exams (NDA, CDS, AFCAT)</a></li>
+            <li><a href="https://statepsc.in/" target="_blank">State PSC Exams (BPSC, UPPSC, MPSC)</a></li>
+            <li><a href="https://ctet.nic.in/" target="_blank">Teaching Exams (CTET, TET, UGC NET)</a></li>
+        </ul>
+    </div>
+
+    <!-- Agriculture & Farming -->
+    <div class="category">
+        <h3>Agriculture & Farming</h3>
+        <ul class="services">
+            <li><a href="https://pmkisan.gov.in/" target="_blank">PM Kisan Samman Nidhi</a></li>
+            <li><a href="https://www.kisan.gov.in/" target="_blank">Kisan Credit Card (KCC)</a></li>
+            <li><a href="https://dbtagriculture.bihar.gov.in/" target="_blank">Bihar Krishi Input Subsidy</a></li>
+            <li><a href="https://pmfby.gov.in/" target="_blank">PM Fasal Bima Yojana</a></li>
+            <li><a href="https://agri.bih.nic.in/" target="_blank">MSP & Bihar Mandi Rates</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<hr >
+
+<div class="container">
+
+<!-- Certificates & Documents -->
+<div class="category">
+    <h3>Certificates & Documents</h3>
+    <ul class="services">
+        <li><a href="https://services.india.gov.in/service/search?kw=Birth%20Certificate" target="_blank">Birth Certificate</a></li>
+        <li><a href="https://services.india.gov.in/service/search?kw=Death%20Certificate" target="_blank">Death Certificate</a></li>
+        <li><a href="https://services.india.gov.in/service/search?kw=Income%20Certificate" target="_blank">Income Certificate</a></li>
+        <li><a href="https://services.india.gov.in/service/search?kw=Caste%20Certificate" target="_blank">Caste Certificate</a></li>
+        <li><a href="https://services.india.gov.in/service/search?kw=Residence%20Certificate" target="_blank">Residence Certificate</a></li>
+        <li><a href="https://services.india.gov.in/service/search?kw=Marriage%20Certificate" target="_blank">Marriage Certificate</a></li>
+        <li><a href="https://services.india.gov.in/service/search?kw=Electricity%20Bill%20Payment" target="_blank">Electricity Bill Payment</a></li>
+        <li><a href="https://digilocker.gov.in/" target="_blank">DigiLocker</a></li>
+        <li><a href="https://nad.gov.in/" target="_blank">National Academic Depository</a></li>
+    </ul>
+</div>
+
+<!-- Admission -->
+<div class="category">
+    <h3>Admission</h3>
+    <ul class="services">
+        <li><a href="https://nta.ac.in/" target="_blank">NTA Exams (JEE, NEET, CUET)</a></li>
+        <li><a href="https://jeemain.nta.nic.in/" target="_blank">JEE Main & Advanced</a></li>
+        <li><a href="https://neet.nta.nic.in/" target="_blank">NEET UG & PG</a></li>
+        <li><a href="https://cuet.samarth.ac.in/" target="_blank">CUET (Common University Entrance Test)</a></li>
+        <li><a href="https://du.ac.in/" target="_blank">Delhi University Admissions</a></li>
+        <li><a href="https://admissions.ignou.ac.in/" target="_blank">IGNOU Admissions</a></li>
+        <li><a href="https://studyabroad.gov.in/" target="_blank">Study Abroad Programs</a></li>
+    </ul>
+</div>
+
+<!-- Syllabus -->
+<div class="category">
+    <h3>Syllabus</h3>
+    <ul class="services">
+        <li><a href="https://www.upsc.gov.in/examinations/syllabus" target="_blank">UPSC Exam Syllabus</a></li>
+        <li><a href="https://ssc.nic.in/" target="_blank">SSC Exams Syllabus (CGL, CHSL, MTS)</a></li>
+        <li><a href="https://www.ibps.in/" target="_blank">IBPS Bank Exams Syllabus</a></li>
+        <li><a href="https://railwayrecruitment.gov.in/" target="_blank">Railway Exams Syllabus (RRB NTPC, Group D)</a></li>
+        <li><a href="https://nta.ac.in/" target="_blank">JEE & NEET Exam Syllabus</a></li>
+        <li><a href="https://cuet.samarth.ac.in/" target="_blank">CUET Entrance Exam Syllabus</a></li>
+        <li><a href="https://ctet.nic.in/" target="_blank">CTET & Teaching Exams Syllabus</a></li>
+    </ul>
+</div>
+
+</div>
+
+
+        <div class="footer">
+            <p>Not Copyright © 2025 IndiaGo.in - All Rights Reserved.</p>
+
+            <!-- Social Media Links -->
+            <div class="social">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+
+</section>
+
+<section id="contact">
+
+<!-- Search Box -->
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search for a service..." onkeyup="searchService()">
+    <button onclick="searchService()">🔍 Search</button>
+</div>
+
+<!-- Video Guide Section -->
+<div class="video-guide">
+    <h3>🎥 How to Apply for Services? | सेवाओं के लिए आवेदन कैसे करें?</h3>
+<ul>
+    <li><a href="#" target="_blank">How to Apply for PAN Card? | पैन कार्ड के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Update Aadhaar Online? | आधार ऑनलाइन अपडेट कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for Voter ID? | वोटर आईडी के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Driving License? | ड्राइविंग लाइसेंस के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Ration Card? | राशन कार्ड के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Passport? | पासपोर्ट के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for an E-Shram Card? | ई-श्रम कार्ड के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Link Aadhaar with PAN? | आधार को पैन से लिंक कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for an Income Certificate? | आय प्रमाण पत्र के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Domicile Certificate? | निवास प्रमाण पत्र के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Birth Certificate? | जन्म प्रमाण पत्र के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Death Certificate? | मृत्यु प्रमाण पत्र के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Caste Certificate? | जाति प्रमाण पत्र के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Disability Certificate? | विकलांगता प्रमाण पत्र के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for Ayushman Bharat Card? | आयुष्मान भारत कार्ड के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for PM Kisan Yojana? | पीएम किसान योजना के लिए पंजीकरण कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Check PM Awas Yojana Status? | पीएम आवास योजना की स्थिति कैसे जांचें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Business Loan? | बिजनेस लोन के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Scholarship? | स्कॉलरशिप के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to File an Online RTI? | ऑनलाइन आरटीआई कैसे फाइल करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for NREGA Job Card? | नरेगा जॉब कार्ड के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Food License (FSSAI)? | खाद्य लाइसेंस (FSSAI) के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for GST Registration? | जीएसटी पंजीकरण के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Trade License? | व्यापार लाइसेंस के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Check Electricity Bill Online? | बिजली बिल ऑनलाइन कैसे जांचें?</a></li>
+    <li><a href="#" target="_blank">How to Check PF Balance Online? | पीएफ बैलेंस ऑनलाइन कैसे चेक करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Labour Card? | श्रम कार्ड के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Register a Complaint on Consumer Forum? | उपभोक्ता फोरम में शिकायत कैसे दर्ज करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for an Import Export Code (IEC)? | आयात निर्यात कोड (IEC) के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Vehicle Fitness Certificate? | वाहन फिटनेस प्रमाण पत्र के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Learning License? | लर्निंग लाइसेंस के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Pollution Certificate for Vehicles? | वाहन प्रदूषण प्रमाण पत्र के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Bank Account Online? | बैंक खाता ऑनलाइन कैसे खोलें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Home Loan? | होम लोन के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Credit Card? | क्रेडिट कार्ड के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a Student Loan? | स्टूडेंट लोन के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for a NOC for Property Transfer? | संपत्ति हस्तांतरण के लिए एनओसी कैसे प्राप्त करें?</a></li>
+    <li><a href="#" target="_blank">How to Check Online Property Tax? | ऑनलाइन संपत्ति कर कैसे जांचें?</a></li>
+    <li><a href="#" target="_blank">How to Get a New Mobile SIM Card? | नया मोबाइल सिम कार्ड कैसे प्राप्त करें?</a></li>
+    <li><a href="#" target="_blank">How to Register for Digital Signature Certificate (DSC)? | डिजिटल सिग्नेचर सर्टिफिकेट के लिए आवेदन कैसे करें?</a></li>
+    <li><a href="#" target="_blank">How to Apply for an Arms License? | शस्त्र लाइसेंस के लिए आवेदन कैसे करें?</a></li>
+</ul>
+</div>
+</section>
+
+<section id="notice">
+    <h2>📢 Notices & Announcements | नोटिस और घोषणाएं</h2>
+    <hr>
+    <p>All the latest updates will be displayed here. | सभी नवीनतम अपडेट यहां प्रदर्शित किए जाएंगे।</p>
+
+    <!-- Notice Scrolling Section -->
+    <marquee class="marquee1" behavior="scroll" direction="left" scrollamount="6" 
+    style="color: #000000; font-size: 16px; font-weight: bold; background: #FF9933; padding: 8px; border-radius: 5px;">
+        ✅ यह वेबसाइट 100% सुरक्षित है और यहाँ से केवल <br> आधिकारिक पोर्टल ही उपयोग किए जाते हैं।
+    </marquee>
+
+    <hr>
+
+    <!-- Important Notices -->
+    <ul class="notices">
+        <li>✅ <strong>New:</strong> Online application for e-Shram Card is now open. <a href="#">Apply Now</a></li>
+        <li>📅 <strong>Upcoming:</strong> Scholarship form last date is March 31, 2025. <a href="#">Check Details</a></li>
+        <li>🚦 <strong>Important:</strong> Driving License renewal process updated! <a href="#">Learn More</a></li>
+        <li>📜 <strong>Alert:</strong> Land record digitization started in Bihar. <a href="#">Read More</a></li>
+        <li>💳 <strong>Banking:</strong> New KYC guidelines issued by RBI. <a href="#">Know More</a></li>
+        <li>🏡 <strong>Housing:</strong> PM Awas Yojana new registration is now open. <a href="#">Register Now</a></li>
+        <li>💼 <strong>Jobs:</strong> Government job vacancies updated for Bihar state. <a href="#">View Jobs</a></li>
+        <li>🩺 <strong>Health:</strong> Free health check-up camp in Patna on March 20, 2025. <a href="#">Details Here</a></li>
+        <li>📢 <strong>Education:</strong> Bihar Board 10th & 12th exam results coming soon. <a href="#">Check Here</a></li>
+    </ul>
+
+    <hr>
+
+    <!-- Help Section -->
+    <h2>🆘 Help & Support | सहायता और समर्थन</h2>
+    <p>अगर आपको किसी भी सरकारी सेवा या आवेदन प्रक्रिया में सहायता की आवश्यकता है, तो हमसे संपर्क करें।</p>
+    
+    <ul class="help">
+        <li>📌 <strong>e-Shram Card:</strong> आवेदन और समस्याओं के लिए <a href="#">यहाँ क्लिक करें</a></li>
+        <li>📌 <strong>Ration Card:</strong> नए राशन कार्ड के लिए <a href="#">यहाँ आवेदन करें</a></li>
+        <li>📌 <strong>Aadhaar Update:</strong> आधार कार्ड अपडेट से जुड़ी जानकारी <a href="#">यहाँ देखें</a></li>
+        <li>📌 <strong>Banking & KYC:</strong> बैंकिंग सेवाओं में सहायता के लिए <a href="#">यहाँ जानें</a></li>
+        <li>📌 <strong>Driving License:</strong> नया आवेदन या नवीनीकरण <a href="#">यहाँ करें</a></li>
+        <li>📌 <strong>Job Assistance:</strong> सरकारी नौकरियों के लिए <a href="#">यहाँ अप्लाई करें</a></li>
+    </ul>
+
+    <hr>
+
+    <!-- Contact Information -->
+    <h2>📞 Contact Us | संपर्क करें</h2>
+    <p>Email: <a href="mailto:support@bihargo.in">kundan9608580120@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919608580120">+91 9608580120</a></p>
+</section>
+
+    <section id="login">
+        <div class="form-container" id="signupForm">
+            <h2>📝 Sign Up</h2>
+            <input type="text" id="name" placeholder="Full Name"><br>
+            <input type="tel" id="mobile" placeholder="Mobile Number"><br>
+            <input type="email" id="email" placeholder="Email"><br>
+            <input type="password" id="password" placeholder="Password"><br>
+            <button onclick="signUp()">Sign Up</button>
+            <p class="switch-form" onclick="showLogin()">Already have an account? Login</p>
+        </div>
+
+        <div class="form-container" id="loginForm" style="display: none;">
+            <h2>🔐 Login</h2>
+            <input type="email" id="loginEmail" placeholder="Email"><br>
+            <input type="password" id="loginPassword" placeholder="Password"><br>
+            <button onclick="userLogin()">Login</button>
+            <p class="switch-form" onclick="showSignup()">Don't have an account? Sign Up</p>
+        </div>
+
+        <div class="form-container" id="userInfo" style="display: none;">
+            <h2>👤 Welcome, <span id="userName"></span></h2>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+    </section>
+
+    <script>
+function showSection(sectionId) {
+    document.querySelectorAll("section").forEach(section => section.style.display = "none");
+    document.getElementById(sectionId).style.display = "block";
+}
+
+function showLogin() {
+    document.getElementById("signupForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("userInfo").style.display = "none";
+}
+
+function showSignup() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("signupForm").style.display = "block";
+    document.getElementById("userInfo").style.display = "none";
+}
+
+function signUp() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    if (name && email && password) {
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userPassword", password);
+        localStorage.setItem("loggedIn", "true"); // Store login state
+        showUser();
+    } else {
+        alert("Please fill all fields!");
+    }
+}
+
+function userLogin() {
+    var loginEmail = document.getElementById("loginEmail").value;
+    var loginPassword = document.getElementById("loginPassword").value;
+    var storedEmail = localStorage.getItem("userEmail");
+    var storedPassword = localStorage.getItem("userPassword");
+
+    if (loginEmail === storedEmail && loginPassword === storedPassword) {
+        localStorage.setItem("loggedIn", "true"); // Store login state
+        showUser();
+    } else {
+        alert("Invalid email or password!");
+    }
+}
+
+function showUser() {
+    var userName = localStorage.getItem("userName");
+    if (userName) {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("signupForm").style.display = "none";
+        document.getElementById("userInfo").style.display = "block";
+        document.getElementById("userName").innerText = userName;
+        document.querySelector(".logout-btn").style.display = "block"; // Show logout button
+    }
+}
+
+function logout() {
+    localStorage.removeItem("loggedIn");
+    document.getElementById("userInfo").style.display = "none";
+    document.querySelector(".logout-btn").style.display = "none"; // Hide logout button
+    showLogin();
+}
+
+// Auto-login on page load if user is already logged in
+window.onload = function () {
+    if (localStorage.getItem("loggedIn") === "true") {
+        showUser();
+    } else {
+        showSection("home");
+    }
+};
+
+function openTool(url) {
+    window.open(url, "_blank");
+}
+
+function searchService() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let categories = document.querySelectorAll('.category');
+    let videoItems = document.querySelectorAll('.video-guide ul li');
+    let found = false;
+
+    // Reset styles for all items before search
+    document.querySelectorAll('.services li, .video-guide ul li').forEach(item => {
+        item.style.backgroundColor = ""; // Remove highlight
+        item.style.color = "";
+    });
+
+    // Searching in Service Categories
+    categories.forEach(category => {
+        let services = category.querySelectorAll('.services li');
+        let matchedServices = [];
+
+        services.forEach(service => {
+            let text = service.innerText.toLowerCase();
+
+            if (text.includes(input) && input !== "") {
+                service.style.backgroundColor = "#28a745"; // Green highlight
+                service.style.color = "white";
+                matchedServices.push(service);
+                found = true;
+            }
+        });
+
+        // Move matching services to the top
+        matchedServices.forEach(service => {
+            category.querySelector('.services').prepend(service);
+        });
+
+        if (matchedServices.length > 0) {
+            category.parentNode.prepend(category);
+        }
+    });
+
+    // Searching in Video Guide Section
+    let matchedVideos = [];
+    videoItems.forEach(video => {
+        let text = video.innerText.toLowerCase();
+
+        if (text.includes(input) && input !== "") {
+            video.style.backgroundColor = "#28a745"; // Green highlight
+            video.style.color = "white";
+            matchedVideos.push(video);
+            found = true;
+        }
+    });
+
+    // Move matching videos to the top
+    matchedVideos.forEach(video => {
+        document.querySelector('.video-guide ul').prepend(video);
+    });
+
+    // If no match found, show alert
+    if (!found && input !== "") {
+        alert("No matching service found!");
+    }
+}
+
+    function toggleView(id, element) {
+        let list = document.getElementById(id);
+        if (list.style.maxHeight) {
+            list.style.maxHeight = null;
+            element.innerText = "View More";
+        } else {
+            list.style.maxHeight = "none";
+            element.innerText = "View Less";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let targetSection = sessionStorage.getItem("targetSection");
+
+        if (targetSection) {
+            showSection(targetSection); // सही सेक्शन को दिखाएं
+            sessionStorage.removeItem("targetSection"); // एक बार उपयोग के बाद हटाएं
+        }
+    });
+
+    function showSection(sectionID) {
+        document.querySelectorAll("section").forEach(section => {
+            section.style.display = "none"; // सभी सेक्शन छिपाएं
+        });
+
+        let target = document.getElementById(sectionID);
+        if (target) {
+            target.style.display = "block"; // Target सेक्शन दिखाएं
+        }
+    }
+
+
+
+
+
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let targetSection = sessionStorage.getItem("targetSection");
+        if (targetSection) {
+            showSection(targetSection); 
+            sessionStorage.removeItem("targetSection");
+        }
+    });
+
+    function showSection(sectionID) {
+        document.querySelectorAll("section").forEach(section => {
+            section.style.display = "none";
+        });
+
+        let target = document.getElementById(sectionID);
+        if (target) {
+            target.style.display = "block";
+        }
+    }
+
+    // ✅ Mobile में Back Button दबाने पर Direct Exit करें
+    window.history.pushState(null, null, window.location.href);
+    window.addEventListener("popstate", function () {
+        window.history.pushState(null, null, window.location.href);
+        if (confirm("Do you really want to exit?")) {
+            window.close(); 
+window.location.href = "https://www.google.com";
+        }
+    });
+</script>
+
+</body>
+</html>
