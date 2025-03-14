@@ -1,57 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://livejobseva.github.io/</loc>
-  <lastmod>2025-03-13T20:46:13+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://livejobseva.github.io/ssc_mts.html</loc>
-  <lastmod>2025-03-13T20:46:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://livejobseva.github.io/ibps_po.html</loc>
-  <lastmod>2025-03-13T20:46:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://livejobseva.github.io/rrb_gov.html</loc>
-  <lastmod>2025-03-13T20:46:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://livejobseva.github.io/indian_navy_ssr.html</loc>
-  <lastmod>2025-03-13T20:46:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://livejobseva.github.io/airforce_xy.html</loc>
-  <lastmod>2025-03-13T20:46:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://livejobseva.github.io/bihar_police_si.html</loc>
-  <lastmod>2025-03-13T20:46:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://livejobseva.github.io/bihar_police_constable.html</loc>
-  <lastmod>2025-03-13T20:46:13+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://livejobseva.github.io/index.html</loc>
-  <lastmod>2025-03-13T20:46:13+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://livejobseva.github.io/</loc>
+      <lastmod>2025-03-14</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://livejobseva.github.io/page1</loc>
+      <lastmod>2025-03-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
 </urlset>
