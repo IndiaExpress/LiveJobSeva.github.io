@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="BMEvqzPulpPniYyuAjVFT7IeSaAmp9yl3Aoy75w9rZE" />
     <title>Live Job Seva - Latest Government & Private Job Updates 2025</title>
@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://livejobseva.github.io/">
     <link rel="stylesheet" href="style.css">
+    
     <style>
         * {
             margin: 0;
@@ -337,25 +338,92 @@ margin-bottom: 7px;
         background: #f1f1f1;
     }
 
+.f_size{
+font-size: 11px;
+}
+
+        .category-box { margin-top: 20px; padding: 10px; border-radius: 5px; }
+        .list-item { background: #f2f2f2; padding: 8px; margin: 5px 0; border-radius: 5px; }
+        .list-item a { text-decoration: none; color: blue; font-weight: bold; display: block; }
+
+#userName{
+font-size: 15px;
+}
+
+
+        .container2 {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .notification {
+            padding: 10px;
+            margin: 10px 0;
+            background: #fff8e1;
+            border-left: 5px solid #ffa000;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .notification strong {
+            display: block;
+            font-size: 16px;
+            color: #d84315;
+        }
+        .notification p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .notification a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .notification a:hover {
+            text-decoration: underline;
+        }
+
+/* 🔄 Loading Spinner */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+
+    color: #007BFF;
+
+}
+
+/* 🔵 Circular Spinner */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 4px solid rgba(0, 123, 255, 0.3);
+    border-top: 4px solid #007BFF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+
+}
+
+/* 🔄 Animation for Rotation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
     </style>
 </head>
 <body>
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-    let targetSection = sessionStorage.getItem("targetSection");
-
-    if (targetSection) {
-        setTimeout(() => { 
-            showSection(targetSection);  
-            sessionStorage.removeItem("targetSection");  
-        }, 001); // 0.5 सेकंड का छोटा डिले ताकि पेज पहले लोड हो जाए
-    } else {
-        showSection("home"); 
-    }
-});
-</script>
 
     <header>
         <div class="logo">🏡 Welcome to Live Job Seva 🚀</div>
@@ -382,91 +450,15 @@ style="color: white; font-size: 16px; font-weight: bold; background: #138808; pa
 </marquee>
 
 <hr >
-
-
-
 <hr >
 
-    <div class="container">
-        
-    <!-- Government Services -->
+<div class="container">
+
+    <!-- Government services -->
     <div class="category">
-<h3>Government Services</h3>
-<ul class="services" id="govt-services">
-    <!-- पहचान पत्र और सरकारी दस्तावेज -->
-    <li><a href="https://www.onlineservices.nsdl.com" target="_blank">Online PAN Card</a></li>
-    <li><a href="https://uidai.gov.in/" target="_blank">Aadhaar Update</a></li>
-    <li><a href="https://www.nvsp.in/" target="_blank">Voter ID Apply</a></li>
-    <li><a href="https://www.passportindia.gov.in/" target="_blank">Passport Services</a></li>
-    <li><a href="https://eshram.gov.in/" target="_blank">e-Shram Card</a></li>
-
-    <!-- बैंकिंग और वित्तीय सेवाएँ -->
-    <li><a href="https://pmkisan.gov.in/" target="_blank">PM Kisan Samman Nidhi</a></li>
-    <li><a href="https://www.bharatbillpay.com/" target="_blank">Bharat Bill Payment</a></li>
-    <li><a href="https://www.psbloansin59minutes.com/" target="_blank">PSB Loans (बिजनेस लोन)</a></li>
-    <li><a href="https://epfindia.gov.in/" target="_blank">EPF Balance Check</a></li>
-    <li><a href="https://nrega.nic.in/netnrega/" target="_blank">MGNREGA</a></li>
-
-    <!-- आयकर और GST -->
-    <li><a href="https://incometaxindiaefiling.gov.in/" target="_blank">ITR Filing</a></li>
-    <li><a href="https://gst.gov.in/" target="_blank">GST Services</a></li>
-
-    <!-- भूमि रिकॉर्ड और संपत्ति -->
-    <li><a href="https://bhulekh.nic.in/" target="_blank">Land Record</a></li>
-    <li><a href="https://biharbhumi.bihar.gov.in/" target="_blank">Bihar Land Records</a></li>
-    <li><a href="https://wbregistration.gov.in/" target="_blank">West Bengal Land Registration</a></li>
-    <li><a href="https://grammanchitra.gov.in/" target="_blank">Gram Manchitra</a></li>
-
-    <!-- वाहन और परिवहन सेवाएँ -->
-    <li><a href="https://parivahan.gov.in/" target="_blank">Vehicle Registration</a></li>
-    <li><a href="https://sarathi.parivahan.gov.in/" target="_blank">Driving License</a></li>
-    <li><a href="https://www.uber.com/in/en/" target="_blank">Uber Booking</a></li>
-    <li><a href="https://www.olacabs.com/" target="_blank">Ola Booking</a></li>
-
-    <!-- रेलवे और ट्रांसपोर्ट -->
-    <li><a href="https://www.irctc.co.in/" target="_blank">IRCTC Train Booking</a></li>
-    <li><a href="https://www.indianrail.gov.in/" target="_blank">Indian Railways</a></li>
-
-    <!-- सुरक्षा और रक्षा सेवाएँ -->
-    <li><a href="https://bsf.gov.in/" target="_blank">BSF Recruitment</a></li>
-    <li><a href="https://cisfrectt.in/" target="_blank">CISF Recruitment</a></li>
-    <li><a href="https://joinindianarmy.nic.in/" target="_blank">Indian Army Recruitment</a></li>
-    <li><a href="https://joinindiannavy.gov.in/" target="_blank">Indian Navy Recruitment</a></li>
-    <li><a href="https://airmenselection.cdac.in/" target="_blank">Indian Airforce Recruitment</a></li>
-
-    <!-- छात्रवृत्ति और शिक्षा -->
-    <li><a href="https://scholarships.gov.in/" target="_blank">National Scholarship Portal</a></li>
-    <li><a href="https://mahadbt.maharashtra.gov.in/" target="_blank">MahaDBT Scholarship</a></li>
-    <li><a href="https://www.ncs.gov.in/" target="_blank">National Career Service (NCS)</a></li>
-    <li><a href="https://nptel.ac.in/" target="_blank">NPTEL Free Courses</a></li>
-    <li><a href="https://swayam.gov.in/" target="_blank">Swayam Online Learning</a></li>
-    <li><a href="https://ugcnet.nta.nic.in/" target="_blank">UGC NET</a></li>
-    <li><a href="https://csirnet.nta.nic.in/" target="_blank">CSIR NET</a></li>
-
-    <!-- स्वास्थ्य और चिकित्सा -->
-    <li><a href="https://www.cowin.gov.in/" target="_blank">Cowin Vaccination</a></li>
-    <li><a href="https://nha.gov.in/" target="_blank">Ayushman Bharat Yojana</a></li>
-    <li><a href="https://www.india.gov.in/health-services" target="_blank">India Health Services</a></li>
-    
-    <!-- बिजली और पानी बिल -->
-    <li><a href="https://mahadiscom.in/" target="_blank">Maharashtra Electricity Bill</a></li>
-    <li><a href="https://wbpds.wb.gov.in/" target="_blank">West Bengal Ration Card</a></li>
-    <li><a href="https://e-mitra.rajasthan.gov.in/" target="_blank">E-Mitra Rajasthan</a></li>
-    <li><a href="https://tneb.tnebnet.org/awp/login" target="_blank">TNEB Tamil Nadu Electricity</a></li>
-
-    <!-- अन्य सरकारी सेवाएँ -->
-    <li><a href="https://www.startupindia.gov.in/" target="_blank">Startup India</a></li>
-    <li><a href="https://www.msde.gov.in/" target="_blank">Skill Development (MSDE)</a></li>
-    <li><a href="https://www.india.gov.in/" target="_blank">India Government Portal</a></li>
-    <li><a href="https://indiaculture.nic.in/" target="_blank">Ministry of Culture</a></li>
-</ul>
-        <span class="view-more" onclick="toggleView('govt-services', this)">View More</span>
-    </div>
-
-<!-- Latest Jobs-->
-<div class="category">
-<h3>Latest Jobs</h3>
-<ul class="services" id="latest-jobs">
+        <h3>Government services</h3>
+        <ul class="services">
+    <div class="f_size" id="government-services"></div>
     <li><a href="ssc_mts.html" target="_blank">SSC MTS <br><span id="status-ssc-mts"></span></a></li>
     <li><a href="ibps_po.html" target="_blank">IBPS PO <br><span id="status-ibps"></span></a></li>
     <li><a href="rrb_gov.html" target="_blank">RRB NTPC <br><span id="status-rrb"></span></a></li>
@@ -485,194 +477,120 @@ style="color: white; font-size: 16px; font-weight: bold; background: #138808; pa
     <li><a href="https://bpsc.bih.nic.in/" target="_blank">BPSC PCS <br><span id="status-bpsc"></span></a></li>
     <li><a href="https://ugcnet.nta.nic.in/" target="_blank">UGC NET <br><span id="status-ugc-net"></span></a></li>
     <li><a href="https://csirnet.nta.nic.in/" target="_blank">CSIR NET <br><span id="status-csir-net"></span></a></li>
-    <li><a href="https://esic.gov.in/" target="_blank">ESIC UDC & Stenographer <br><span id="status-esic"></span></a></li>
-</ul>
-
-<script>
-    function updateJobStatus() {
-        const jobs = [
-            { id: "status-ssc-mts", applydate: "2025-06-20", lastdate: "2025-06-26" },
-            { id: "status-upsc", applydate: "2025-03-20", lastdate: "2025-03-28" },
-            { id: "status-ibps", applydate: "2025-01-10", lastdate: "2025-02-15" },
-            { id: "status-rrb", applydate: "2025-07-25", lastdate: "2025-07-30" },
-            { id: "status-navy", applydate: "", lastdate: "2025-08-10" }, // Coming Soon
-            { id: "status-airforce", applydate: "2025-04-10", lastdate: "2025-04-20" },
-            { id: "status-bihar-si", applydate: "2025-05-01", lastdate: "2025-05-10" },
-            { id: "status-bihar-constable", applydate: "2025-06-15", lastdate: "2025-06-25" },
-            { id: "status-sbi-clerk", applydate: "2025-07-05", lastdate: "2025-07-15" },
-            { id: "status-sbi-po", applydate: "", lastdate: "2025-09-01" }, // Coming Soon
-            { id: "status-drdo", applydate: "2025-03-05", lastdate: "2025-03-15" },
-            { id: "status-isro", applydate: "2025-05-10", lastdate: "2025-05-20" },
-            { id: "status-post-gds", applydate: "", lastdate: "2025-08-30" }, // Coming Soon
-            { id: "status-nabard", applydate: "2025-06-01", lastdate: "2025-06-10" },
-            { id: "status-fci", applydate: "2025-09-15", lastdate: "2025-09-25" },
-            { id: "status-uppsc", applydate: "2025-07-10", lastdate: "2025-07-20" },
-            { id: "status-bpsc", applydate: "2025-08-05", lastdate: "2025-08-15" },
-            { id: "status-ugc-net", applydate: "", lastdate: "2025-11-01" }, // Coming Soon
-            { id: "status-csir-net", applydate: "2025-10-01", lastdate: "2025-10-10" },
-            { id: "status-esic", applydate: "2025-04-20", lastdate: "2025-04-30" }
-        ];
-
-        const today = new Date().toISOString().split("T")[0];
-
-        jobs.forEach(job => {
-            let element = document.getElementById(job.id);
-            if (element) {
-                if (!job.applydate || today < job.applydate) {
-                    element.innerText = "Coming Soon";
-                    element.style.color = "orange";
-                } else if (today >= job.applydate && today <= job.lastdate) {
-                    element.innerText = "Apply";
-                    element.style.color = "green";
-                } else {
-                    element.innerText = "Expired";
-                    element.style.color = "red";
-                }
-            }
-        });
-    }
-
-    updateJobStatus();
-</script>
-
-    <span class="view-more" onclick="toggleView('latest-jobs', this)">View More</span>
-</div>
-
-<!-- Results -->
-<div class="category">
-    <h3>Results</h3>
-        <ul class="services" id="exam-results">
-        <!-- 10th Results -->
-        <li><a href="https://bsebresult.biharboardonline.com/" target="_blank">Bihar Board 10th Result - <span class="status" id="result-bihar-10"></span></a></li>
-        <li><a href="https://cbseresults.nic.in/" target="_blank">CBSE 10th Result - <span class="status" id="result-cbse-10"></span></a></li>
-        <li><a href="https://upresults.nic.in/" target="_blank">UP Board 10th Result - <span class="status" id="result-upboard-10"></span></a></li>
-
-        <!-- 12th Results -->
-        <li><a href="https://bsebresult.biharboardonline.com/" target="_blank">Bihar Board 12th Result - <span class="status" id="result-bihar-12"></span></a></li>
-        <li><a href="https://cbseresults.nic.in/" target="_blank">CBSE 12th Result - <span class="status" id="result-cbse-12"></span></a></li>
-        <li><a href="https://upresults.nic.in/" target="_blank">UP Board 12th Result - <span class="status" id="result-upboard-12"></span></a></li>
-
-        <!-- Competitive Exam Results -->
-        <li><a href="https://nta.ac.in/" target="_blank">NTA NEET Result - <span class="status" id="result-neet"></span></a></li>
-        <li><a href="https://nta.ac.in/" target="_blank">NTA JEE Result - <span class="status" id="result-jee"></span></a></li>
-        <li><a href="https://ssc.nic.in/" target="_blank">SSC Exam Result - <span class="status" id="result-ssc"></span></a></li>
-        <li><a href="https://www.upsc.gov.in/examinations" target="_blank">UPSC Result - <span class="status" id="result-upsc"></span></a></li>
-        <li><a href="https://www.nta.ac.in/" target="_blank">CUET UG Result - <span class="status" id="result-cuet"></span></a></li>
-        <li><a href="https://www.nta.ac.in/" target="_blank">CUET PG Result - <span class="status" id="result-cuet-pg"></span></a></li>
-        <li><a href="https://railwayrecruitment.in/" target="_blank">Railway Exam Result - <span class="status" id="result-rrb"></span></a></li>
-        <li><a href="https://www.ibps.in/" target="_blank">IBPS Bank Exam Result - <span class="status" id="result-ibps"></span></a></li>
-        <li><a href="https://ctet.nic.in/" target="_blank">CTET Result - <span class="status" id="result-ctet"></span></a></li>
-        <li><a href="https://biharboardonline.bihar.gov.in/" target="_blank">Bihar STET Result - <span class="status" id="result-stet"></span></a></li>
-        <li><a href="https://bpsc.bih.nic.in/" target="_blank">BPSC Exam Result - <span class="status" id="result-bpsc"></span></a></li>
-        <li><a href="https://tet.examraj.in/" target="_blank">UPTET Result - <span class="status" id="result-uptet"></span></a></li>
         </ul>
-<script>
+    </div>
 
+    <!-- Latest Job-->
+    <div class="category">
+        <h3>Latest Job</h3>
+        <ul class="services">
 
-
-// 🔹 VIEW MORE FUNCTIONALITY
-function toggleView(id, button) {
-    const list = document.getElementById(id);
-    if (list.style.maxHeight) {
-        list.style.maxHeight = null;
-        button.innerText = "View More";
-    } else {
-        list.style.maxHeight = "none";
-        button.innerText = "View Less";
-    }
-}
-
-</script>
-    <span class="view-more" onclick="toggleView('exam-results', this)">View More</span>
+<!-- ✅ Latest Jobs Data (Initially Hidden) -->
+<div class="f_size" id="latest-jobs">
+<!-- 🔄 Loading Section for Latest Jobs -->
+<div id="loading-latest-jobs" class="loading">
+    <div class="spinner"></div>
+    <p>Loading</p>
 </div>
+</div>
+<!-- 🔥 Latest Job Openings -->
+<li><a href="https://bank.sbi/careers" target="_blank">SBI Clerk & PO Recruitment</a></li>
+<li><a href="https://www.drdo.gov.in/careers" target="_blank">DRDO Scientist & Technical Jobs</a></li>
+<li><a href="https://www.npcil.nic.in/" target="_blank">NPCIL Engineer Recruitment</a></li>
+<li><a href="https://www.isro.gov.in/careers" target="_blank">ISRO Scientist/Engineer Jobs</a></li>
+<li><a href="https://www.indiapost.gov.in" target="_blank">India Post GDS & MTS Recruitment</a></li>
+<li><a href="https://www.fci.gov.in" target="_blank">FCI Food Inspector & Manager Jobs</a></li>
+<li><a href="https://bpsc.bih.nic.in/" target="_blank">BPSC PCS & Govt Jobs</a></li>
+<li><a href="https://www.nabard.org" target="_blank">NABARD Assistant & Manager Posts</a></li>
+<li><a href="https://www.rrbcdg.gov.in" target="_blank">Railway ALP, NTPC, Group D Jobs</a></li>
+<li><a href="https://www.joinindiannavy.gov.in/" target="_blank">Indian Navy Officer & Sailor Jobs</a></li>
+<li><a href="https://joinindianarmy.nic.in/" target="_blank">Indian Army GD, Clerk & Technical Entry</a></li>
+<li><a href="https://www.airmenselection.cdac.in/" target="_blank">Indian Air Force Airmen & Agniveer Jobs</a></li>
+<li><a href="https://ssc.nic.in/" target="_blank">SSC Stenographer, JE & Other Exams</a></li>
+<li><a href="https://www.upsc.gov.in/" target="_blank">UPSC CAPF, NDA, CDS & Civil Services</a></li>
+<li><a href="https://csirnet.nta.nic.in/" target="_blank">CSIR NET JRF & Assistant Professor</a></li>
+<li><a href="https://ugcnet.nta.nic.in/" target="_blank">UGC NET & Assistant Professor Jobs</a></li>
+<li><a href="https://ctet.nic.in/" target="_blank">CTET & State TET Teaching Jobs</a></li>
+<li><a href="https://www.esic.nic.in/" target="_blank">ESIC UDC, Stenographer & MTS Recruitment</a></li>
+<li><a href="https://www.ibps.in/" target="_blank">IBPS RRB, Clerk, PO, SO Jobs</a></li>
+<li><a href="https://www.uidai.gov.in/" target="_blank">UIDAI Aadhaar Executive & Assistant Jobs</a></li>
+<li><a href="https://www.nvsp.in/" target="_blank">Election Commission Voter ID Recruitment</a></li>
+<li><a href="https://www.incometaxindia.gov.in/" target="_blank">Income Tax Officer & Assistant Posts</a></li>
+<li><a href="https://www.sebi.gov.in/" target="_blank">SEBI Officer Grade A (Assistant Manager)</a></li>
+<li><a href="https://www.nhai.gov.in/" target="_blank">NHAI Engineer & Administrative Posts</a></li>
+<li><a href="https://recruitment.bankofbaroda.co.in/" target="_blank">Bank of Baroda PO & Clerk Jobs</a></li>
+<li><a href="https://careers.tcs.com/" target="_blank">TCS Off-Campus Hiring (Freshers)</a></li>
+<li><a href="https://www.wipro.com/careers/" target="_blank">Wipro Work From Home & Office Jobs</a></li>
+<li><a href="https://www.infosys.com/careers/" target="_blank">Infosys Software Developer & Support Jobs</a></li>
+<li><a href="https://www.amazon.jobs/en/" target="_blank">Amazon India Work From Home Jobs</a></li>
+<li><a href="https://careers.flipkart.com/" target="_blank">Flipkart Warehouse & Office Jobs</a></li>
+<li><a href="https://www.swiggy.com/careers" target="_blank">Swiggy & Zomato Delivery Partner Jobs</a></li>
+        </ul>
+    </div>
+
+    <!-- All Results -->
+    <div class="category">
+        <h3>Results</h3>
+        <ul class="services">
+            <div class="f_size" id="results"></div>
+            <li><a href="https://pmkisan.gov.in/" target="_blank">PM Kisan Samman Nidhi</a></li>
+            <li><a href="https://www.kisan.gov.in/" target="_blank">Kisan Credit Card (KCC)</a></li>
+            <li><a href="https://dbtagriculture.bihar.gov.in/" target="_blank">Bihar Krishi Input Subsidy</a></li>
+            <li><a href="https://pmfby.gov.in/" target="_blank">PM Fasal Bima Yojana</a></li>
+            <li><a href="https://agri.bih.nic.in/" target="_blank">MSP & Bihar Mandi Rates</a></li>
+        </ul>
+    </div>
 
 </div>
-
 
 <hr >
 
 
 <div class="container">
 
-<!-- Admit Card -->
-<div class="category">
-    <h3>Admit Card</h3>
-    <ul class="services" id="admit-card">
-        <li><a href="https://ssc.nic.in/" target="_blank">SSC CHSL Admit Card <br><span id="status-ssc-chsl"></span></a></li>
-        <li><a href="https://upsc.gov.in/" target="_blank">UPSC CSE Prelims Admit Card <br><span id="status-upsc-cse"></span></a></li>
-        <li><a href="https://jeemain.nta.nic.in/" target="_blank">JEE Main Session 2 Admit Card <br><span id="status-jee-main"></span></a></li>
-        <li><a href="https://nta.ac.in/" target="_blank">NEET UG 2025 Admit Card <br><span id="status-neet"></span></a></li>
-        <li><a href="https://gate.iitk.ac.in/" target="_blank">GATE 2025 Admit Card <br><span id="status-gate"></span></a></li>
-        <li><a href="https://ibps.in/" target="_blank">IBPS PO Mains Admit Card <br><span id="status-ibps-po"></span></a></li>
-        <li><a href="https://www.joinindianarmy.nic.in/" target="_blank">Indian Army Agniveer Admit Card <br><span id="status-army"></span></a></li>
-        <li><a href="https://www.rrbcdg.gov.in/" target="_blank">RRB Group D Admit Card <br><span id="status-rrb-groupd"></span></a></li>
-        <li><a href="https://biharpolice.bih.nic.in/" target="_blank">Bihar Police Constable Admit Card <br><span id="status-bihar-police"></span></a></li>
-    </ul>
-
-    <script>
-        function updateAdmitCardStatus() {
-            const admitCards = [
-                { id: "status-ssc-chsl", releaseDate: "2025-03-01" },
-                { id: "status-upsc-cse", releaseDate: "2025-03-10" },
-                { id: "status-jee-main", releaseDate: "" }, // Coming Soon
-                { id: "status-neet", releaseDate: "" }, // Coming Soon
-                { id: "status-gate", releaseDate: "2025-02-15" },
-                { id: "status-ibps-po", releaseDate: "" }, // Coming Soon
-                { id: "status-army", releaseDate: "2025-03-05" },
-                { id: "status-rrb-groupd", releaseDate: "" }, // Coming Soon
-                { id: "status-bihar-police", releaseDate: "2025-02-20" }
-            ];
-
-            const today = new Date().toISOString().split("T")[0];
-
-            admitCards.forEach(admitCard => {
-                let element = document.getElementById(admitCard.id);
-                if (element) {
-                    if (!admitCard.releaseDate || today < admitCard.releaseDate) {
-                        element.innerText = "Coming Soon";
-                        element.style.color = "red";
-                    } else {
-                        element.innerText = "Active";
-                        element.style.color = "green";
-                    }
-                }
-            });
-        }
-
-        updateAdmitCardStatus();
-    </script>
-
-    <button class="view-more-btn" onclick="toggleView('admit-card', this)">View More</button>
-</div>
-
-    <!-- Transport & Travel -->
+    <!-- Admit Card-->
     <div class="category">
-        <h3>Transport & Travel</h3>
-        <ul class="services" id="transport-travel">
-            <li><a href="https://sarathi.parivahan.gov.in/" target="_blank">Driving License Apply</a></li>
-            <li><a href="https://vahan.parivahan.gov.in/" target="_blank">Vehicle Registration</a></li>
-            <li><a href="https://echallan.parivahan.gov.in/" target="_blank">Pay E-Challan</a></li>
-            <li><a href="https://www.irctc.co.in/" target="_blank">IRCTC Train Booking</a></li>
-            <li><a href="https://www.redbus.in/" target="_blank">Bus Ticket Booking</a></li>
-            <li><a href="https://www.passportindia.gov.in/" target="_blank">Passport Apply</a></li>
-            <li><a href="https://state.bihar.gov.in/" target="_blank">Bihar Transport Services</a></li>
+        <h3>Admit Card</h3>
+        <ul class="services">
+            <div class="f_size" id="admit-card"></div>
+            <li><a href="https://www.onlineservices.nsdl.com" target="_blank">Online PAN Card</a></li>
+            <li><a href="https://uidai.gov.in/" target="_blank">Aadhaar Update</a></li>
+            <li><a href="https://www.nvsp.in/" target="_blank">Voter ID Apply</a></li>
+            <li><a href="https://incometaxindiaefiling.gov.in/" target="_blank">ITR Filing</a></li>
+            <li><a href="https://www.bankbazaar.com/" target="_blank">Bank Account Opening</a></li>
+            <li><a href="https://pmjdy.gov.in/" target="_blank">Jan Dhan Account</a></li>
+            <li><a href="https://www.epfindia.gov.in/" target="_blank">EPF Balance Check</a></li>
+            <li><a href="https://www.npci.org.in/" target="_blank">UPI Registration</a></li>
+            <li><a href="https://www.mudra.org.in/" target="_blank">Mudra Loan</a></li>
         </ul>
-        <button class="view-more-btn" onclick="toggleView('transport-travel', this)">View More</button>
     </div>
 
-    <!-- Education & Scholarship -->
+    <!-- Transport & Travel-->
     <div class="category">
-        <h3>Education & Scholarship</h3>
-        <ul class="services" id="education-scholarship">
-            <li><a href="https://scholarships.gov.in/" target="_blank">National Scholarship Portal</a></li>
-            <li><a href="https://nsp.gov.in/" target="_blank">Post Matric Scholarship</a></li>
-            <li><a href="https://ugc.ac.in/" target="_blank">UGC Scholarship Schemes</a></li>
-            <li><a href="https://educationloan.in/" target="_blank">Education Loan Assistance</a></li>
-            <li><a href="https://biharboardonline.bihar.gov.in/" target="_blank">Bihar Board Scholarship</a></li>
-            <li><a href="https://csirhrdg.res.in/" target="_blank">CSIR Research Fellowship</a></li>
-            <li><a href="https://www.aicte-india.org/" target="_blank">AICTE Scholarship Schemes</a></li>
+        <h3>Transport Travel</h3>
+        <ul class="services">
+            <div class="f_size" id="transport-travel"></div>
+            <li><a href="https://ssc.nic.in/" target="_blank">SSC Exams (CGL, CHSL, MTS)</a></li>
+            <li><a href="https://upsc.gov.in/" target="_blank">UPSC Civil Services</a></li>
+            <li><a href="https://www.ibps.in/" target="_blank">IBPS Bank Exams (PO, Clerk, SO)</a></li>
+            <li><a href="https://railwayrecruitment.gov.in/" target="_blank">Railway Recruitment (RRB NTPC, Group D)</a></li>
+            <li><a href="https://joinindianarmy.nic.in/" target="_blank">Defence Exams (NDA, CDS, AFCAT)</a></li>
+            <li><a href="https://statepsc.in/" target="_blank">State PSC Exams (BPSC, UPPSC, MPSC)</a></li>
+            <li><a href="https://ctet.nic.in/" target="_blank">Teaching Exams (CTET, TET, UGC NET)</a></li>
         </ul>
-        <button class="view-more-btn" onclick="toggleView('education-scholarship', this)">View More</button>
+    </div>
+
+    <!-- Education & Scholarship-->
+    <div class="category">
+        <h3>Education Scholarship</h3>
+        <ul class="services">
+            <div class="f_size" id="education-scholarship"></div>
+            <li><a href="https://pmkisan.gov.in/" target="_blank">PM Kisan Samman Nidhi</a></li>
+            <li><a href="https://www.kisan.gov.in/" target="_blank">Kisan Credit Card (KCC)</a></li>
+            <li><a href="https://dbtagriculture.bihar.gov.in/" target="_blank">Bihar Krishi Input Subsidy</a></li>
+            <li><a href="https://pmfby.gov.in/" target="_blank">PM Fasal Bima Yojana</a></li>
+            <li><a href="https://agri.bih.nic.in/" target="_blank">MSP & Bihar Mandi Rates</a></li>
+        </ul>
     </div>
 
 </div>
@@ -685,6 +603,7 @@ function toggleView(id, button) {
     <div class="category">
         <h3>Banking & Finance</h3>
         <ul class="services">
+            <div class="f_size" id="banking-finance"></div>
             <li><a href="https://www.onlineservices.nsdl.com" target="_blank">Online PAN Card</a></li>
             <li><a href="https://uidai.gov.in/" target="_blank">Aadhaar Update</a></li>
             <li><a href="https://www.nvsp.in/" target="_blank">Voter ID Apply</a></li>
@@ -701,6 +620,7 @@ function toggleView(id, button) {
     <div class="category">
         <h3>Comparative Exams</h3>
         <ul class="services">
+            <div class="f_size" id="comparative-exams"></div>
             <li><a href="https://ssc.nic.in/" target="_blank">SSC Exams (CGL, CHSL, MTS)</a></li>
             <li><a href="https://upsc.gov.in/" target="_blank">UPSC Civil Services</a></li>
             <li><a href="https://www.ibps.in/" target="_blank">IBPS Bank Exams (PO, Clerk, SO)</a></li>
@@ -715,6 +635,8 @@ function toggleView(id, button) {
     <div class="category">
         <h3>Agriculture & Farming</h3>
         <ul class="services">
+
+            <div class="f_size" id="agriculture-farming"></div>
             <li><a href="https://pmkisan.gov.in/" target="_blank">PM Kisan Samman Nidhi</a></li>
             <li><a href="https://www.kisan.gov.in/" target="_blank">Kisan Credit Card (KCC)</a></li>
             <li><a href="https://dbtagriculture.bihar.gov.in/" target="_blank">Bihar Krishi Input Subsidy</a></li>
@@ -733,6 +655,7 @@ function toggleView(id, button) {
 <div class="category">
     <h3>Certificates & Documents</h3>
     <ul class="services">
+        <div class="f_size" id="certificates-documents"></div>
         <li><a href="https://services.india.gov.in/service/search?kw=Birth%20Certificate" target="_blank">Birth Certificate</a></li>
         <li><a href="https://services.india.gov.in/service/search?kw=Death%20Certificate" target="_blank">Death Certificate</a></li>
         <li><a href="https://services.india.gov.in/service/search?kw=Income%20Certificate" target="_blank">Income Certificate</a></li>
@@ -749,6 +672,7 @@ function toggleView(id, button) {
 <div class="category">
     <h3>Admission</h3>
     <ul class="services">
+        <div class="f_size" id="admission"></div>
         <li><a href="https://nta.ac.in/" target="_blank">NTA Exams (JEE, NEET, CUET)</a></li>
         <li><a href="https://jeemain.nta.nic.in/" target="_blank">JEE Main & Advanced</a></li>
         <li><a href="https://neet.nta.nic.in/" target="_blank">NEET UG & PG</a></li>
@@ -763,6 +687,7 @@ function toggleView(id, button) {
 <div class="category">
     <h3>Syllabus</h3>
     <ul class="services">
+        <div class="f_size" id="syllabus"></div>
         <li><a href="https://www.upsc.gov.in/examinations/syllabus" target="_blank">UPSC Exam Syllabus</a></li>
         <li><a href="https://ssc.nic.in/" target="_blank">SSC Exams Syllabus (CGL, CHSL, MTS)</a></li>
         <li><a href="https://www.ibps.in/" target="_blank">IBPS Bank Exams Syllabus</a></li>
@@ -775,18 +700,18 @@ function toggleView(id, button) {
 
 </div>
 
-
-        <footer>
+<footer>
   <p>&copy; 2025 Live Job Seva. All Rights Reserved.</p>
   <ul>
     <li><a href="about.html">About Us</a></li>
     <li><a href="privacy-policy.html">Privacy Policy</a></li>
     <li><a href="terms.html">Terms & Conditions</a></li>
-    <li><a href="sitemap.xml">Sitemap</a></li>
   </ul>
 </footer>
 
 </section>
+
+<!-- 2 section -->
 
 <section id="contact">
 
@@ -890,7 +815,7 @@ function toggleView(id, button) {
 
     <!-- Contact Information -->
     <h2>📞 Contact Us | संपर्क करें</h2>
-    <p>Email: <a href="mailto:livejobseva@gmail.com">livejobseva@gmail.com</a></p>
+    <p>Email: <a href="livejobseva@gmail.com">livejobseva@gmail.com</a></p>
     <p>Phone: <a href="tel:+919608580120">+91 9608580120</a></p>
 </section>
 
@@ -917,13 +842,73 @@ function toggleView(id, button) {
     <h2>👤 Welcome, <span id="userName"></span></h2>
     <button onclick="logout()">Logout</button>
 </div>
-</section>
 
-<style>
-#userName{
-font-size: 15px;
-}
-</style>
+<hr >
+<hr >
+    <div class="container2">
+        <h2>📢 Latest Notifications</h2>
+        <div id="notificationList">
+            <!-- Notifications Will Load Here -->
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZp9iByRLuYTQEqXPGYWh6qkAeqAHN9wI",
+            authDomain: "recharge-25324.firebaseapp.com",
+            databaseURL: "https://recharge-25324-default-rtdb.firebaseio.com",
+            projectId: "recharge-25324",
+            storageBucket: "recharge-25324.appspot.com",
+            messagingSenderId: "801483653705",
+            appId: "1:801483653705:web:82703d20e585cffb5f3598"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        function loadNotifications() {
+            const notiContainer = document.getElementById("notificationList");
+            notiContainer.innerHTML = "";
+
+            const notiRef = ref(db, "notifications");
+            onValue(notiRef, (snapshot) => {
+                let notifications = [];
+
+                snapshot.forEach((childSnapshot) => {
+                    const noti = childSnapshot.val();
+                    notifications.push({
+                        title: noti.title || "No Title",
+                        message: noti.message || "No Message",
+                        link: noti.link,
+                        time: new Date(noti.timestamp).toLocaleString()
+                    });
+                });
+
+                // 🔥 सबसे नया Notification सबसे ऊपर दिखेगा
+                notifications.reverse();
+
+                notifications.forEach(noti => {
+                    let notificationHTML = `
+                        <div class="notification">
+                            <strong>${noti.title}</strong>
+                            <p>${noti.message}</p>
+                            ${noti.link ? `<a href="${noti.link}" target="_blank">🔗 Open Link</a>` : ""}
+                            <small>${noti.time}</small>
+                        </div>
+                    `;
+                    notiContainer.innerHTML += notificationHTML;
+                });
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", loadNotifications);
+    </script>
+
+
+</section>
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
@@ -1026,6 +1011,7 @@ font-size: 15px;
         }
     }
 </script>
+
 
     <script>
 function showSection(sectionId) {
@@ -1199,10 +1185,6 @@ function searchService() {
         }
     }
 
-
-
-
-
     </script>
 
 <script>
@@ -1234,6 +1216,94 @@ function searchService() {
 window.location.href = "https://www.google.com";
         }
     });
+</script>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCZp9iByRLuYTQEqXPGYWh6qkAeqAHN9wI",
+        authDomain: "recharge-25324.firebaseapp.com",
+        databaseURL: "https://recharge-25324-default-rtdb.firebaseio.com",
+        projectId: "recharge-25324",
+        storageBucket: "recharge-25324.appspot.com",
+        messagingSenderId: "801483653705",
+        appId: "1:801483653705:web:82703d20e585cffb5f3598"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    function fetchCategories() {
+        const categoriesRef = ref(db, "categories");
+
+        const categories = {
+            "Government Services": "government-services",
+            "Latest Jobs": "latest-jobs",
+            "Results": "results",
+            "Admit Card": "admit-card",
+            "Transport & Travel": "transport-travel",
+            "Education & Scholarship": "education-scholarship",
+            "Banking & Finance": "banking-finance",
+            "Comparative Exams": "comparative-exams",
+            "Agriculture & Farming": "agriculture-farming",
+            "Certificates & Documents": "certificates-documents",
+            "Admission": "admission",
+            "Syllabus": "syllabus"
+        };
+
+        onValue(categoriesRef, (snapshot) => {
+            snapshot.forEach((categorySnapshot) => {
+                const categoryName = categorySnapshot.key;
+                const categoryItems = categorySnapshot.val();
+                const categoryDivId = categories[categoryName];
+
+                if (categoryDivId) {
+                    const categoryDiv = document.getElementById(categoryDivId);
+                    categoryDiv.innerHTML = ""; // पहले से भरा हुआ डेटा हटाएं
+
+                    for (let key in categoryItems) {
+                        categoryDiv.innerHTML += `<div class="list-item">
+                            <a href="${categoryItems[key].link}" target="_blank">${categoryItems[key].title}</a>
+                        </div>`;
+                    }
+                }
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", fetchCategories);
+</script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    let targetSection = sessionStorage.getItem("targetSection");
+
+    if (targetSection) {
+        setTimeout(() => { 
+            showSection(targetSection);  
+            sessionStorage.removeItem("targetSection");  
+        }, 001); // 0.5 सेकंड का छोटा डिले ताकि पेज पहले लोड हो जाए
+    } else {
+        showSection("home"); 
+    }
+});
+
+// 🔹 VIEW MORE FUNCTIONALITY
+function toggleView(id, button) {
+    const list = document.getElementById(id);
+    if (list.style.maxHeight) {
+        list.style.maxHeight = null;
+        button.innerText = "View More";
+    } else {
+        list.style.maxHeight = "none";
+        button.innerText = "View Less";
+    }
+}
+
+
 </script>
 
 </body>
